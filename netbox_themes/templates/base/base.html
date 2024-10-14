@@ -1,0 +1,10 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load template_filters %}
+
+{% block head %}
+   {{ block.super }}
+   <style>
+     {{ '' | return_custom_css  }}
+   </style>
+{% endblock %}

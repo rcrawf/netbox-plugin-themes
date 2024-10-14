@@ -1,0 +1,15 @@
+{% extends 'generic/object.html' %}
+{% load template_filters %}
+
+{% block content %}
+  <div class="row mb-3">
+    <div class="col">
+      <div class="card">
+        <h5 class="card-header">CSS Data</h5>
+        <div class="card-body">
+          <pre>{{ object.css_data|base64decode|linebreaks }}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,3 @@
+*.egginfo
+netbox_themes.egg-info
+__pycache__
