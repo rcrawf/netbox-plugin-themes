@@ -16,7 +16,7 @@ class Theme(NetBoxModel):
             default=False
     )
     css_data = models.TextField(
-        default='e30K'
+        default=''
     )
     base_theme = models.CharField(
         max_length=10,

@@ -8,7 +8,7 @@ from netbox_themes.models import Theme
 
 def insert_initial_data(apps, schema_editor):
     """ Create default theme. """
-    default_theme = Theme(name="default", active=True)
+    default_theme = Theme(name="default", active=True, css_data='e30K')
     default_theme.save()
 
 class Migration(migrations.Migration):
@@ -28,7 +28,8 @@ class Migration(migrations.Migration):
                 ('last_updated', models.DateTimeField(auto_now=True, null=True)),
                 ('custom_field_data', models.JSONField(blank=True, default=dict, encoder=utilities.json.CustomFieldJSONEncoder)),
                 ('name', models.CharField(max_length=100)),
-                ('css_data', models.TextField(default='e30K')),
+                ('css_data', models.TextField(default='')),
+                ('base_theme', models.CharField(default='dark', max_length=10)),
                 ('active', models.BooleanField(default=False)),
                 ('tags', taggit.managers.TaggableManager(through='extras.TaggedItem', to='extras.Tag')),
             ],
