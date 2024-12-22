@@ -30,6 +30,8 @@ Then restart the Netbox service.
 
 # Create a theme!
 
+This is a basic example to change to a monospace font:
+
 ![Create a theme](media/create-theme.png?raw=true "Create a theme")
 
 ## Build instructions
