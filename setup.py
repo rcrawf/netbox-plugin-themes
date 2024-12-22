@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='netbox-plugin-themes',
-    version='0.1.0',
+    version='0.2.0',
     description='Custom CSS themes for NetBox',
     install_requires=[],
     packages=find_packages(),
