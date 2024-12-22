@@ -36,6 +36,10 @@ This is a basic example to change to a monospace font:
 
 ![Create a theme](media/create-theme.png?raw=true "Create a theme")
 
+Or take a look in the `samples` directory:
+
+![Doom](media/doom.png?raw=true "Doom theme")
+
 ## Build instructions
 
 ```
