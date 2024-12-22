@@ -3,6 +3,11 @@ from django.db import models
 from netbox.models import NetBoxModel
 from django.urls import reverse
 
+BASE_THEME_CHOICES = [
+    ('dark', 'Dark'),
+    ('light', 'Light'),
+]
+
 class Theme(NetBoxModel):
     name = models.CharField(
         max_length=100
@@ -11,8 +16,12 @@ class Theme(NetBoxModel):
             default=False
     )
     css_data = models.TextField(
-        #max_length=100_000,
         default=''
+    )
+    base_theme = models.CharField(
+        max_length=10,
+        choices=BASE_THEME_CHOICES,
+        default='dark',
     )
 
     class Meta:

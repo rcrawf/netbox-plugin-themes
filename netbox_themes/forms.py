@@ -9,7 +9,7 @@ class ThemeForm(NetBoxModelForm):
 
     class Meta:
         model = Theme
-        fields = ('name', 'active', 'css_data')
+        fields = ('name', 'active', 'base_theme', 'css_data')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
