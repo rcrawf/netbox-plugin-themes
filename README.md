@@ -19,13 +19,18 @@ PLUGINS = [
 ]
 ```
 
-Run the migrations:
+Run the migrations and generate static content:
 
 ```
 manage.py migrate
+manage.py collectstatic
 ```
 
 Then restart the Netbox service.
+
+# Create a theme!
+
+![Create a theme](media/create-theme.png?raw=true "Create a theme")
 
 ## Build instructions
 
