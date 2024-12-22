@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
                 ('last_updated', models.DateTimeField(auto_now=True, null=True)),
                 ('custom_field_data', models.JSONField(blank=True, default=dict, encoder=utilities.json.CustomFieldJSONEncoder)),
                 ('name', models.CharField(max_length=100)),
-                ('css_data', models.TextField(default='/* Immutable default */')),
+                ('css_data', models.TextField(default='e30K')),
                 ('active', models.BooleanField(default=False)),
                 ('tags', taggit.managers.TaggableManager(through='extras.TaggedItem', to='extras.Tag')),
             ],

@@ -1,0 +1,2 @@
+recursive-include netbox_themes/templates *
+recursive-include netbox_themes/templatetags *

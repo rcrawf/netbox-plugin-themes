@@ -1,3 +1,5 @@
 *.egginfo
 netbox_themes.egg-info
 __pycache__
+netbox_plugin_themes.egg-info/
+dist

@@ -1,8 +1,8 @@
 from setuptools import find_packages, setup
 
 setup(
-    name='netbox-themes',
-    version='0.1',
+    name='netbox-plugin-themes',
+    version='0.1.0',
     description='Custom CSS themes for NetBox',
     install_requires=[],
     packages=find_packages(),
