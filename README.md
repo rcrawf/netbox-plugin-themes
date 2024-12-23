@@ -4,6 +4,8 @@ Plugin to inject custom CSS themes into NetBox.
 
 Tested on Netbox >= 4.1.0.
 
+This is experimental so YMMV :)
+
 # Installation
 
 Install the plugin:
