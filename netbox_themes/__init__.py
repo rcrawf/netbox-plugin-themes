@@ -7,7 +7,7 @@ class NetBoxThemes(PluginConfig):
     name = 'netbox_themes'
     verbose_name = 'NetBox Themes'
     description = 'Manage CSS themes for NetBox'
-    version = '0.3.0'
+    version = '0.3.1'
     base_url = 'themes'
 
     def ready(self):

@@ -1,0 +1,44 @@
+body {
+  font-family: mono !important;
+}
+
+.netbox-edition::before {
+  content: "🎄";
+}
+
+.netbox-edition::after {
+  content: "🎄";
+}
+
+body[data-bs-theme="dark"] .navbar-vertical.navbar-expand-lg .text-secondary{
+  color: green !important;
+}
+
+body[data-bs-theme="dark"] .navbar-vertical.navbar-expand-lg .text-secondary::before{
+  content: "🎄";
+}
+
+body[data-bs-theme="dark"] .navbar-vertical.navbar-expand-lg .nav-item.dropdown.active::after {
+  border-color: red !important;
+}
+
+.mdi::before {
+  content: "🎁" !important;
+}
+
+
+.mdi-magnify::before {
+  content: "🎅" !important;
+}
+
+.mdi-lightbulb-on::before {
+  content: "⛄" !important;
+}
+
+.mdi-plus-thick::before {
+  content: "🍷" !important;
+}
+
+.mdi-download::before {
+  content: "🎄" !important;
+}
