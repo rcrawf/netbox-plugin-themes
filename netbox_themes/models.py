@@ -3,6 +3,8 @@ from django.db import models
 from netbox.models import NetBoxModel
 from django.urls import reverse
 
+from .exceptions import ThemeDeleteError
+
 BASE_THEME_CHOICES = [
     ('dark', 'Dark'),
     ('light', 'Light'),
@@ -32,3 +34,10 @@ class Theme(NetBoxModel):
 
     def get_absolute_url(self):
         return reverse('plugins:netbox_themes:theme', args=[self.id])
+
+    def delete(self, *args, **kwargs):
+        if self.active == True:
+            raise ThemeDeleteError("Cannot delete active theme, deactivate it before deleting")
+        if self.name == "default":
+            raise ThemeDeleteError("Cannot delete default theme")
+        super().delete(*args, **kwargs)

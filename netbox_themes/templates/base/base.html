@@ -11,19 +11,11 @@
 {% block javascript %}
    {{ block.super }}
    <script>
-     const bodyElement = document.body;
      const themeName = "{{ '' | theme_name }}";
-     const originalSetAttribute = Element.prototype.setAttribute;
-     console.log(`Active theme: ${themeName}`);
-
-     if (themeName != "default") {
-       Element.prototype.setAttribute = function (name, value) {
-          if (this.tagName === "BODY" && name === "data-bs-theme") {
-              console.log(`Intercepted attempt to set data-bs-theme to: ${value}`);
-              value = "{{ '' | return_base_theme }}"; // Force base theme
-          }
-          return originalSetAttribute.call(this, name, value);
-      };
-   };
+     const baseThemeName = "{{ '' | return_base_theme }}";
+     if (themeName != 'default') { 
+       localStorage.setItem("netbox-color-mode", baseThemeName);
+       console.log(`Active theme: ${themeName}, base theme ${baseThemeName}`);
+     };
    </script>
 {% endblock %}

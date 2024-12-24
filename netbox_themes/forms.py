@@ -3,6 +3,7 @@ import base64
 from django import forms
 
 from netbox.forms import NetBoxModelForm
+from .exceptions import ThemeEditError
 from .models import Theme
 
 class ThemeForm(NetBoxModelForm):
@@ -44,6 +45,12 @@ class ThemeForm(NetBoxModelForm):
         # instance = super().save(commit=False)
         if self.cleaned_data.get('css_data'):
             instance.css_data = base64.b64encode(self.cleaned_data['css_data'].encode()).decode()
+
+        # Prevent no themes being active
+        if self.cleaned_data.get("name") == "default":
+            pre = Theme.objects.get(pk=self.instance.pk)
+            if pre.active == True and self.cleaned_data.get("active") == False:
+                raise ThemeEditError("Cannot deactive default theme")
 
         # Save the current theme (it will be the only active one if checked)
         return super().save(commit)
