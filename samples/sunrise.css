@@ -1,0 +1,15 @@
+.navbar {
+  background: linear-gradient(#15e7eb, #fcba03) !important;
+}
+
+.netbox-edition::before {
+  content: "🌞";
+}
+
+.netbox-edition::after {
+  content: "🌞";
+}
+
+.mdi-magnify::before {
+  content: "🌞";
+}

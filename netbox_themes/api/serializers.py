@@ -13,5 +13,5 @@ class ThemeSerializer(NetBoxModelSerializer):
     class Meta:
         model = Theme
         fields = (
-            'id', 'name', 'active', 'css_data',
+            'id', 'name', 'active', 'base_theme', 'css_data',
         )

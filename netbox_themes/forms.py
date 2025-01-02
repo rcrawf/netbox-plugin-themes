@@ -39,7 +39,9 @@ class ThemeForm(NetBoxModelForm):
         # only if the theme isn't a new resource
         if instance.pk:
             if self.cleaned_data.get('active') == False:
-                Theme.objects.filter(name="default").update(active=True)
+                # and we're switching from True -> False (not editing an inactive theme)
+                if self.instance._prechange_snapshot.get("active") == True:
+                    Theme.objects.filter(name="default").update(active=True)
 
         # B64 encode the css_data
         # instance = super().save(commit=False)

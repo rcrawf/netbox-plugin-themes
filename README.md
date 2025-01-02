@@ -42,6 +42,8 @@ Or take a look in the `samples` directory:
 
 ![Doom](media/doom.png?raw=true "Doom theme")
 
+![Sunrise](media/sunrise.png?raw=true "Sunrise theme")
+
 ## Build instructions
 
 ```
