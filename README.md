@@ -44,6 +44,8 @@ Or take a look in the `samples` directory:
 
 ![Sunrise](media/sunrise.png?raw=true "Sunrise theme")
 
+![Christmas](media/christmas.png?raw=true "Christmas theme")
+
 ## Build instructions
 
 ```
