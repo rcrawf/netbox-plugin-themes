@@ -8,6 +8,17 @@ from .models import Theme
 
 class ThemeForm(NetBoxModelForm):
 
+    # Form view customizations
+    css_data = forms.CharField(
+        label="CSS data",
+        widget=forms.Textarea(
+            attrs={
+                'style': 'font-family: monospace;',
+            }
+        )
+    )
+
+
     class Meta:
         model = Theme
         fields = ('name', 'active', 'base_theme', 'css_data')
