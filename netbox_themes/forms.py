@@ -17,7 +17,8 @@ class ThemeForm(NetBoxModelForm):
 
         # Check if the theme being edited is the "default" theme
         if self.instance.name == 'default':
-            self.fields['css_data'].widget.attrs['readonly'] = True 
+            self.fields['name'].widget.attrs['readonly'] = True
+            self.fields['css_data'].widget.attrs['readonly'] = True
 
         # Decode the base64 css_data
         if self.instance and self.instance.pk:
@@ -27,6 +28,13 @@ class ThemeForm(NetBoxModelForm):
                 self.initial['css_data'] = decoded_css_data  # Set the decoded value as initial
             except Exception:
                 pass  # Handle decoding errors if needed
+
+    def clean_base_theme(self):
+        """Don't allow editing of the default base theme."""
+        if self.instance and self.instance.name == "default":
+            return "toggle"
+        else:
+            return self.cleaned_data['base_theme']
 
     def save(self, commit=True):
         # If this theme is being activated, deactivate the others

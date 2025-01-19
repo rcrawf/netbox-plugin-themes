@@ -13,9 +13,18 @@
    <script>
      const themeName = "{{ '' | theme_name }}";
      const baseThemeName = "{{ '' | return_base_theme }}";
-     if (themeName != 'default') { 
+     const colorModeToggles = document.querySelectorAll('.color-mode-toggle');
+
+     if (themeName == 'default') { 
+       console.log(`Active theme: default (${themeName}), base theme ${baseThemeName}`);
+     } else if (baseThemeName == 'toggle') {
+       console.log(`Active theme: custom (${themeName}), base theme ${baseThemeName}`);
+     } else {
+       colorModeToggles.forEach(toggle => {
+         toggle.style.display = 'none';
+       });
        localStorage.setItem("netbox-color-mode", baseThemeName);
-       console.log(`Active theme: ${themeName}, base theme ${baseThemeName}`);
+       console.log(`Active theme: custom (${themeName}), base theme ${baseThemeName}`);
      };
    </script>
 {% endblock %}
