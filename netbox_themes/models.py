@@ -8,6 +8,7 @@ from .exceptions import ThemeDeleteError
 BASE_THEME_CHOICES = [
     ('dark', 'Dark'),
     ('light', 'Light'),
+    ('toggle', 'Inherit toggle'),
 ]
 
 class Theme(NetBoxModel):
@@ -23,7 +24,7 @@ class Theme(NetBoxModel):
     base_theme = models.CharField(
         max_length=10,
         choices=BASE_THEME_CHOICES,
-        default='dark',
+        default='toggle',
     )
 
     class Meta:
