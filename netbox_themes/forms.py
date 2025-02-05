@@ -1,4 +1,5 @@
 import base64
+import re
 
 from django import forms
 
@@ -79,6 +80,10 @@ class ThemeForm(NetBoxModelForm):
     def clean_css_data(self):
         """ Crude check to stop scripts being uploaded. """
         data = self.cleaned_data['css_data']
-        if "script" in data:
-            raise forms.ValidationError("Invalid CSS")
+        forbidden_patterns = [
+            r"<[^>]+>",
+        ]
+        for pattern in forbidden_patterns:
+            if re.search(pattern, data, re.IGNORECASE):
+                raise forms.ValidationError("Invalid CSS")
         return data
