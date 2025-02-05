@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "netbox-plugin-themes"
-version = "0.5.0"
+version = "0.5.1"
 authors = [
   { name="Netbox Themes Plugin", email="null@example.com" },
 ]
