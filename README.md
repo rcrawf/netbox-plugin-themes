@@ -43,11 +43,13 @@ Or take a look in the `samples` directory:
 
 ![Doom](media/doom.png?raw=true "Doom theme")
 
-![Sunrise](media/sunrise.png?raw=true "Sunrise theme")
+![Star Trek](media/startrek.png?raw=true "Star Trek theme")
 
-![Christmas](media/christmas.png?raw=true "Christmas theme")
+![Pokemon](media/pokemon.png?raw=true "Pokemon theme")
 
 ![Greggs](media/greggs.png?raw=true "Greggs theme")
+
+![Excel](media/excel.png?raw=true "Excel theme")
 
 ## Build instructions
 
